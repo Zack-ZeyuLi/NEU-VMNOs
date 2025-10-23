@@ -13,3 +13,7 @@ Qci 6 -> 9 (Mint is also 9)
    - RB utilization ratio increased: 23% -> 35%  (more active slot)
 3. SCell[1], SCell[2], SCell[3] were inactive
    - RSRP are bad, no throughput (no RB utilization ratio, no slot utilization ratio)
+
+### T-Mobile + Metro Round 5 - T-Mobile dropped, Metro increased
+RB utilization, slot utilization dropped   
+**T-Mobile Qci 6 -> 9, Metro Qci stay 7**
