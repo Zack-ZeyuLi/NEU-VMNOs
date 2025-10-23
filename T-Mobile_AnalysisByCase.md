@@ -11,4 +11,5 @@ Qci 6 -> 9 (Mint is also 9)
 1. PCell throughput increased: 203 -> 288
    - NR-ARFCN 520110 -> 502110; Bandwidth 100 -> 90
    - RB utilization ratio increased: 23% -> 35%  (more active slot)
-3. SCell[1], SCell[2]
+3. SCell[1], SCell[2], SCell[3] were inactive
+   - RSRP are bad, no throughput (no RB utilization ratio, no slot utilization ratio)
