@@ -41,3 +41,24 @@ TMobile PRB, RB utilization, slot utilization dropped
 TMobile & Mint PRB, RB utilization, slot utilization dropped   
 Metro PRB, RB utilization, slot utilization increased in the first half and decreased in the second half
 ![PRB](images/L1_Metro_Round5.png)
+
+## Location 2 - Downtown Crossing
+### M + V1, Round 2 & Round 3, Mint dropped
+- Different PCI: Round 1 both 838, Round 2 & 3 TMobile 838 Mint 863, Round 4 TMobile 838 -> 863 (handover halfway), Round 5 both 863
+- Mint Avg CQI, RI dropped -> Avg Layer Number, MCS dropped (compared to round 5)
+
+### M + V2, Round 5, TMobile dropped, Metro increased
+- Different PCI: Round 1,2,3 both 838, Round 4 both 863, Round 5 TMobile 863 Metro 838
+- TMobile PRB, slot utilization increased, Avg Layer Number, MCS dropped -> through slightly dropped (compared to round 4, different PCI with other rounds)  
+
+### V1 + V2, Round 1 & Round 4, Mint increased, Metro dropped
+- Round 1 & 4 Mint and Metro were both on Cell 838 (PCell & SCell[1])  
+- Round 2, 3, 5 Mint on 863 while Metro on 838 (PCell & SCell[1])
+- Round 1 diff ARFCN
+
+### M + V1 + V2
+- Round 1, all on 838, diff ARFCN: TMobile & Metro = 502110, Mint = 520110
+- Round 2, (838, 863, 838), ARFCN all 502110, Metro's all SCells were dead (RSRP,RSRQ,SINR were bad)
+- Round 3, (838, 863, 838->863), ARFCN all 502110
+- Round 4, (863, 838, 863), ARFCN all 502110, Metro's all SCells were dead (RSRP,RSRQ,SINR were bad)
+- Round 5, (863, 863, 838), ARFCN all 502110, Mint's SCells struggled bud not dead (RSRP,RSRQ,SINR were bad)
