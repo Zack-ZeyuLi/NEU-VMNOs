@@ -1,5 +1,8 @@
 # T-Mobile (M) & Mint (V1) & Metro (V2) at Boston
 ## Location 1 - Malden Center
+TMobile PCI: (688, 688, 634, 511), Qci: 6 -> 9
+Mint PCI: (688, 688, 634, 511), Qci: 7 -> 9
+Metro: (688, 688, 634, 511), Qci: 7 -> 9
 ### T-Mobile + Mint Round 5 - T-Mobile throughput dropped
 PCI, NR-ARFCN, RSRP, RSRQ, SINR, Bandwidth almostly stay same  
 RB utilization ratio, slot utilization ratio, Transport Block Size dropped  
