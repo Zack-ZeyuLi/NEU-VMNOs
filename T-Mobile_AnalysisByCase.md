@@ -34,6 +34,8 @@ SCell[1], SCell[2], SCell[3] were inactive, RSRP very bad
 **TMobile Qci 6 -> 9, Mint & Metro stay 7**
 TMobile PRB, RB utilization, slot utilization dropped   
 ![Qci](images/L1_M_vs_V1_vs_V2_Round4.png)
+Zoom in the red zone:
+![Qci](images/L1_MV1V2_Round4.png)
 
 ### M + V1 + V2, Round 5, 3 operators perform closely
 **TMobile & Mint Qci 9, Metro half 7 half 9**
