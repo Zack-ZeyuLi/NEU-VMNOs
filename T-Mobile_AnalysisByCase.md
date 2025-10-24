@@ -44,7 +44,7 @@ Metro PRB, RB utilization, slot utilization increased in the first half and decr
 
 ## Location 2 - Downtown Crossing
 ### M + V1, Round 2 & Round 3, Mint dropped
-- Different PCI: Round 1 both 838, Round 2 & 3 TMobile 838 Mint 863, Round 4 TMobile 838 -> 863 (handover halfway), Round 5 both 863
+- Different PCI: Round 1 both 838(PCell & SCell[1]), Round 2 & 3 TMobile 838 Mint 863, Round 4 TMobile 838 -> 863 (handover halfway), Round 5 both 863
 - Mint Avg CQI, RI dropped -> Avg Layer Number, MCS dropped (compared to round 5)
 
 ### M + V2, Round 5, TMobile dropped, Metro increased
@@ -62,3 +62,73 @@ Metro PRB, RB utilization, slot utilization increased in the first half and decr
 - Round 3, (838, 863, 838->863), ARFCN all 502110
 - Round 4, (863, 838, 863), ARFCN all 502110, Metro's all SCells were dead (RSRP,RSRQ,SINR were bad)
 - Round 5, (863, 863, 838), ARFCN all 502110, Mint's SCells struggled bud not dead (RSRP,RSRQ,SINR were bad)
+
+## Location 3 - Ariport
+**Mint can use 80% ~ 100% LTE resources**
+### M + V1, Round 2, TMobile increased
+- TMobile PCI 381(PCell, 90MHz) + 750(SCell[2], 15MHz), Mint PCI 701(50MHz) + 87(LTE, 15MHz) + 475(LTE, 20MHz)
+- PRB, active slot increased
+
+### M + V2, Round 3, TMobile dropped
+- TMobile PCI 381 + 750, Metro PCI 958(PCell, 15MHz) + 701(SCell, 50MHz)
+- PRB, active slot dropped
+
+### V1 + V2, Round 4, Metro dropped
+- Mint PCI 701 + 87 + 475, Metro PCI 958 + 701
+- RSRP got worse at some point
+
+### M + V1 + V2, Round 2, TMobile dropped
+- PRB, active slot dropped
+
+### M + V1 + V2, Round 3, Mint dropped
+- Mint and Metro were both using 701 with ARFCN 520110, they would compete
+- PRB, active slot dropped
+
+## Location 4 - Harvard
+TMobile PCI: 219, 219, 637, 618  
+Mint PCI: 644/219, 644/219, 286/222(LTE), 285/255(LTE)  
+Metro PCI: 644/219, 644/219, 637/78, 662/618
+
+### M + V1, Round 4,5, TMobile dropped
+- Basically TMobile's PRB, active slots are more than Mint
+- Round 4, PCell Layer Number dropped, SCell[1] MCS dropped
+- Round 5, SCell[2],SCell[3] inactive
+
+### M + V2, Round 1,5, Metro dropped
+- Round 1, TMobile PCI 219(PCell,SCell[1]), Metro PCI 644(PCell,SCell), 219 exploit 644
+- Round 2,3,4,5 both 219
+- Round 5, all SCells inactive
+
+### V1 + V2, Round 1, Metro dropped
+- Round 1, Metro PCI 644, Mint PCI 219, other rounds both 219
+- For round 2-5, Metro active slot was more than Mint
+
+### M + V1 + V2
+- Mint's PRB, active slots are much less than TMoblie and Metro in NR
+- Mint cannot compete with TMobile and Metro, maybe because LTE perform bad
+
+## Location 5 - NEU
+TMobile PCI: 685/233, 685/233, 412/225, 587/550
+Mint PCI: 685/233, 685/233, 209/174(LTE), 488/356(LTE)
+Metro PCI: 685/233, 685/233, 412/225, 587/550
+### M + V1, Round 5, both dropped
+- Mint active slots were much less than TMobile
+- Both Layer Number, MCS dropped
+
+### M + V2, Round 4,5 
+- Round 1-3 both PCI are 685(PCell & SCell[1])
+- Round 4 TMobile PCI 685, Metro PCI 233
+- Round 5 TMobile PCI 233, Metro PCI 685
+- Cell 685 exploit 233, 685 has more avg LayerNum/MCS
+
+### V1 + V2, Round 3,4,5
+- Basically Mint PRB, active slots are less than Metro
+- Round 1,2 both PCI are 685
+- Round 3,5 Mint PCI 233, Metro PCI 685
+- Round 4 both PCI are 233 
+
+### M + V1 + V2, Round 4,5
+- Round 1-3, all PCI are 685
+- Round 4, TMobile half 685 half 233, Mint & Metro are 233
+- Round 5, TMobile PCI 233, Mint & Metro are 685
+- Also, Mint cannot compete with TMobile or Metro
