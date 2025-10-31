@@ -14,7 +14,7 @@ Mint throughput no significant increase
 1. PCell throughput increased: 203 -> 288
    - NR-ARFCN 520110 -> 502110; Bandwidth 100 -> 90
    - RB utilization ratio increased: 23% -> 35%  (more active slot)
-3. SCell[1], SCell[2], SCell[3] were inactive
+2. SCell[1], SCell[2], SCell[3] were inactive
    - RSRP are bad, no throughput (no RB utilization ratio, no slot utilization ratio)
 
 ### T-Mobile + Metro Round 5 - T-Mobile dropped, Metro increased
@@ -137,3 +137,115 @@ Metro PCI: 685/233, 685/233, 412/225, 587/550
 - Round 4, TMobile half 685 half 233, Mint & Metro are 233
 - Round 5, TMobile PCI 233, Mint & Metro are 685
 - Also, Mint cannot compete with TMobile or Metro
+
+
+## Class Study
+E1: Individual  
+E2: Pairs  
+E3: triple  
+|QCI Classes|Location|Rounds|
+|:----------|:-------|:-----|
+|**6, 7, 7**|L1|R1, R2, R3, R4E1, R4E2|
+|9, 7, 7|L1|R4E3|
+|9, 9, 7|L1|R5E1, R5E2, R5E3(0-50%)|
+|**9, 9, 9**|L1|R5E3(50%-1)|
+||L2|R1,2,3,4,5|
+||L3|R1,2,3,4,5|
+||L4|R1,2,3,4,5|
+||L5|R1,2,3,4,5|
+### Class 677
+![677AvgThroughput](images/677_class_throughput_analysis.png)
+Unmatched case: Location 1 (Malden Center)  
+![L1AvgThroughput](images/location1_smart_throughput_analysis.png)
+R2E2: M vs V1, TMobile dropped  
+1. PCell throughput increased: 203 -> 288
+   - NR-ARFCN 520110 -> 502110; Bandwidth 100 -> 90
+   - RB utilization ratio increased: 23% -> 35%  (more active slot)
+2. SCell[1], SCell[2], SCell[3] were inactive
+   - RSRP are bad, no throughput (no RB utilization ratio, no slot utilization ratio)  
+
+R3E3: Mint dropped  
+1. PCell perform regularly
+2. SCell[1], SCell[2], SCell[3] were inactive, RSRP very bad
+
+**Winner statistic:**  
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(4 samples)|1 (25%)|2 (50%)|1 (25%)|
+|M vs V1(4)|4 (100%)|0 (0%)|--|
+|M vs V2(4)|3 (75%)|--|1 (25%)|
+|V1 vs V2(4)|--|1 (25%)|3 (75%)|
+|Triple(3)|1 (100%)|0 (0%)|0 (0%)|
+
+### Class 999
+![999AvgThroughput](images/999_class_throughput_analysis.png)
+![L2345AvgThroughput](images/locations_2345_comparison.png)
+Unmatched Case: Location 2 (Downtown Crossing)  
+L2E3: Metro dropped  
+- Metro SCells were dead
+
+![L2AvgThroughput](images/location2_smart_throughput_analysis.png)
+**Winner statistic: Location 2**  
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(5 samples)|3 (60%)|2 (40%)|0 (0%)|
+|M vs V1(5)|3 (60%)|2 (40%)|--|
+|M vs V2(5)|3 (60%)|--|2 (40%)|
+|V1 vs V2(5)|--|2 (40%)|3 (60%)|
+|Triple(5)|2 (40%)|2 (40%)|1 (20%)|
+
+Unmatched Case: Location 3 (BOS Airport)  
+L3E2_MV1: Mint increased  
+- Mint used NSA, LTE was very good
+L3E2_V1V2: Mint increased
+- Mint used NSA, LTE was very good
+L3E3L Mint increased
+- Mint used NSA, LTE was very good
+
+![L3AvgThroughput](images/location3_smart_throughput_analysis.png)
+**Winner statistic: Location3**
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(5 samples)|0 (0%)|5 (100%)|0 (0%)|
+|M vs V1(5)|0 (0%)|5 (100%)|--|
+|M vs V2(5)|2 (40%)|--|3 (60%)|
+|V1 vs V2(5)|--|5 (100%)|0 (0%)|
+|Triple(5)|1 (20%)|4 (80%)|0 (0%)|
+
+Unmatched Case: Location 4 (Harvard)  
+L4E2_MV2: Metro dropped
+- Connect more to a worse cell
+- SCells were dead for a while
+
+![l4AvgThroughput](images/location4_smart_throughput_analysis.png)
+**Winner statistic: Location 4**
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(5 samples)|3 (60%)|0 (0%)|2 (40%)|
+|M vs V1(5)|5 (100%)|0 (0%)|--|
+|M vs V2(5)|3 (60%)|--|2 (40%)|
+|V1 vs V2(5)|--|1 (20%)|4 (80%)|
+|Triple(5)|3 (60%)|0 (0%)|2 (40%)|
+
+Unmatched Case: Location 5 (NEU)  
+L5E3: TMobile dropped
+- Connect more to a worse cell
+
+![L5AvgThroughput](images/location5_smart_throughput_analysis.png)
+**Winner Statistic: Location 5**
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(5 samples)|1 (20%)|0 (0%)|4 (80%)|
+|M vs V1(5)|5 (100%)|0 (0%)|--|
+|M vs V2(5)|1 (20%)|--|4 (80%)|
+|V1 vs V2(5)|--|1 (20%)|4 (80%)|
+|Triple(5)|1 (20%)|0 (0%)|4 (80%)|
+
+**Winner Statistic: Class 999 in total**
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(20 samples)|7 (35%)|7 (35%)|6 (30%)|
+|M vs V1(20)|13 (65%)|7 (35%)|--|
+|M vs V2(20)|9 (45%)|--|11 (55%)|
+|V1 vs V2(20)|--|9 (45%)|11 (55%)|
+|Triple(20)|7 (35%)|6 (30%)|7 (35%)|
