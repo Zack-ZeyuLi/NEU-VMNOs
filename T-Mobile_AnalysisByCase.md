@@ -146,17 +146,20 @@ E3: triple
 |QCI Classes|Location|Rounds|
 |:----------|:-------|:-----|
 |**6, 7, 7**|L1|R1, R2, R3, R4E1, R4E2|
+||L2'|R1, R2, R3|
 |9, 7, 7|L1|R4E3|
 |9, 9, 7|L1|R5E1, R5E2, R5E3(0-50%)|
-|**9, 9, 9**|L1|R5E3(50%-1)|
+|**9, 9, 9**|L1'|R2,3,4,5|
 ||L2|R1,2,3,4,5|
 ||L3|R1,2,3,4,5|
 ||L4|R1,2,3,4,5|
 ||L5|R1,2,3,4,5|
 ### Class 677
-![677AvgThroughput](images/677_class_throughput_analysis.png)
-Unmatched case: Location 1 (Malden Center)  
-![L1AvgThroughput](images/location1_smart_throughput_analysis.png)
+![677AvgThroughput](images/677_class_iperf_throughput_analysis.png)
+![677PerLocation](images/677_per_location_iperf_comparison.png)
+Location 1-1 (Malden Center)  
+![L1-1AvgThroughput](images/location1_iperf_throughput_analysis.png)
+Unmatched cases:  
 R2E2: M vs V1, TMobile dropped  
 1. PCell throughput increased: 203 -> 288
    - NR-ARFCN 520110 -> 502110; Bandwidth 100 -> 90
@@ -168,7 +171,7 @@ R3E3: Mint dropped
 1. PCell perform regularly
 2. SCell[1], SCell[2], SCell[3] were inactive, RSRP very bad
 
-**Winner statistic:**  
+**Winner statistic: Location 1-1**  
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
 |Individually(4 samples)|1 (25%)|2 (50%)|1 (25%)|
@@ -177,15 +180,62 @@ R3E3: Mint dropped
 |V1 vs V2(4)|--|1 (25%)|3 (75%)|
 |Triple(3)|1 (100%)|0 (0%)|0 (0%)|
 
+Location 2-2 (Downtown Crossing)
+![L2-2AvgThroughput](images/location2_2_iperf_throughput_analysis.png)
+Unmatched cases:  
+R1E2: M vs V1: Different PCI  
+R1E2: V1 vs V2: Different PCI  
+R1E3: Different PCI  
+R2E2: M vs V1: Different PCI  
+R2E2: M vs V2: Different PCI  
+R3E2: M vs V1: Different PCI  
+R3E2: M vs V2: Different PCI  
+R3E3: Different PCI; Metro SCell failure  
+
+
+**Winner statistic: Location 2-2**  
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(3 samples)|2 (66.7%)|0 (0%)|1 (33.3%)|
+|M vs V1(3)|1 (33.3%)|2 (66.7%)|--|
+|M vs V2(3)|3 (100%)|--|0 (25%)|
+|V1 vs V2(3)|--|2 (66.7%)|1 (33.3%)|
+|Triple(3)|1 (33.3%)|2 (66.7%)|0 (0%)|
+
+**Winner statistic: 677 in total**  
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(7 samples)|3 (42.8%)|2 (28.6%)|2 (28.6%)|
+|M vs V1(7)|5 (71.4%)|2 (28.6%)|--|
+|M vs V2(7)|6 (85.7%)|--|1 (14.3%)|
+|V1 vs V2(7)|--|3 (42.8%)|4 (57.2%)|
+|Triple(6)|4 (66.7%)|2 (33.3%)|0 (0%)|
+
 ### Class 999
-![999AvgThroughput](images/999_class_throughput_analysis.png)
-![L2345AvgThroughput](images/locations_2345_comparison.png)
-Unmatched Case: Location 2 (Downtown Crossing)  
+![999AvgThroughput](images/999_class_iperf_throughput_analysis.png)
+![999PerLocation](images/999_per_location_iperf_comparison.png)
+Location 1-2 (Malden Center)
+Unmatched cases:  
+L1-2E2: M vs V1: M SCell temporary failure  
+L1-2E2: V1 vs V2: V2 SCell temporary failure
+
+![L1-2AvgThroughput](images/location1_2_iperf_throughput_analysis.png)
+**Winner statistic: Loaction 1-2**
+|Senario|M_T-Mobile|V1_Mint|V2_Metro|
+|:------|:--------:|:-----:|:------:|
+|Individually(4 samples)|3 (75%)|1 (25%)|0 (0%)|
+|M vs V1(4)|1 (25%)|3 (75%)|--|
+|M vs V2(4)|3 (75%)|--|1 (25%)|
+|V1 vs V2(4)|--|3 (75%)|1 (25%)|
+|Triple(4)|2 (50%)|1 (25%)|1 (25%)|
+
+Location 2 (Downtown Crossing)  
+Unmatched cases:  
 L2E3: Metro dropped  
 - Metro SCells were dead
 
 ![L2AvgThroughput](images/location2_smart_throughput_analysis.png)
-**Winner statistic: Location 2**  
+**Winner statistic: Location 2-1**  
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
 |Individually(5 samples)|3 (60%)|2 (40%)|0 (0%)|
@@ -194,7 +244,8 @@ L2E3: Metro dropped
 |V1 vs V2(5)|--|2 (40%)|3 (60%)|
 |Triple(5)|2 (40%)|2 (40%)|1 (20%)|
 
-Unmatched Case: Location 3 (BOS Airport)  
+Location 3 (BOS Airport)  
+Unmatched cases:  
 L3E2_MV1: Mint increased  
 - Mint used NSA, LTE was very good
 L3E2_V1V2: Mint increased
@@ -202,7 +253,7 @@ L3E2_V1V2: Mint increased
 L3E3L Mint increased
 - Mint used NSA, LTE was very good
 
-![L3AvgThroughput](images/location3_smart_throughput_analysis.png)
+![L3AvgThroughput](images/location3_iperf_throughput_analysis.png)
 **Winner statistic: Location3**
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
@@ -212,12 +263,13 @@ L3E3L Mint increased
 |V1 vs V2(5)|--|5 (100%)|0 (0%)|
 |Triple(5)|1 (20%)|4 (80%)|0 (0%)|
 
-Unmatched Case: Location 4 (Harvard)  
+Location 4 (Harvard)  
+Unmatched cases:  
 L4E2_MV2: Metro dropped
 - Connect more to a worse cell
 - SCells were dead for a while
 
-![l4AvgThroughput](images/location4_smart_throughput_analysis.png)
+![l4AvgThroughput](images/location4_iperf_throughput_analysis.png)
 **Winner statistic: Location 4**
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
@@ -227,11 +279,12 @@ L4E2_MV2: Metro dropped
 |V1 vs V2(5)|--|1 (20%)|4 (80%)|
 |Triple(5)|3 (60%)|0 (0%)|2 (40%)|
 
-Unmatched Case: Location 5 (NEU)  
+Location 5 (NEU) 
+Unmatched cases:
 L5E3: TMobile dropped
 - Connect more to a worse cell
 
-![L5AvgThroughput](images/location5_smart_throughput_analysis.png)
+![L5AvgThroughput](images/location5_iperf_throughput_analysis.png) 
 **Winner Statistic: Location 5**
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
@@ -244,8 +297,17 @@ L5E3: TMobile dropped
 **Winner Statistic: Class 999 in total**
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
-|Individually(20 samples)|7 (35%)|7 (35%)|6 (30%)|
-|M vs V1(20)|13 (65%)|7 (35%)|--|
-|M vs V2(20)|9 (45%)|--|11 (55%)|
-|V1 vs V2(20)|--|9 (45%)|11 (55%)|
-|Triple(20)|7 (35%)|6 (30%)|7 (35%)|
+|Individually(24 samples)|10 (41.7%)|8 (33.3%)|6 (25%)|
+|M vs V1(24)|14 (60%)|10 (40%)|--|
+|M vs V2(24)|12 (50%)|--|12 (50%)|
+|V1 vs V2(24)|--|12 (50%)|12 (50%)|
+|Triple(24)|9 (37.5%)|7 (29.2%)|8 (33.3%)|
+
+### Other Odd Pattern
+"Super slow" start:  
+Location 1-1, R5E3, Case 997:  
+![MetroSlow](images/L1_M_vs_V1_vs_V2_Round5.png)
+Location 2-2, R4E3, Case 697:
+![TMobileSlow](images/L2-2_R4E3.png)
+Location 2-2, R5E3, Case 997:
+![MetroSlow](images/L2-2_R5E3.png)
