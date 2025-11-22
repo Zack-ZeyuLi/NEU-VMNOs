@@ -234,7 +234,7 @@ Unmatched cases:
 L2E3: Metro dropped  
 - Metro SCells were dead
 
-![L2AvgThroughput](images/location2_smart_throughput_analysis.png)
+![L2AvgThroughput](images/location2_iperf_throughput_analysis.png)
 **Winner statistic: Location 2-1**  
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
