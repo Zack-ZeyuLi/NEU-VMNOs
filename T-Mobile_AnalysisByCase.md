@@ -184,11 +184,69 @@ Location 2-2 (Downtown Crossing)
 ![L2-2AvgThroughput](images/location2_2_iperf_throughput_analysis.png)
 Unmatched cases:  
 R1E2: M vs V1: Different PCI  
+||M(PCell)|V1(PCell)||M(SCell1)|V1(SCell1)|
+|:--|:--|:--|:--|:--|:--|
+|Qci|6|7||6|7|
+|PCI|863|838||863|838|
+|ARFCN|520110|520110||502110|502110|
+|Throughput|98|118||73|105|
+|RSRP|-91.43|-94.19||-94.55|-94.51|
+|RSRQ|-13.14|-14.26||-15.12|-13.71|
+|SINR|-1.76|0.364||-1.79|2.76|
+|Neighbor PCI / RSRP / RSRQ|838 -93.40 -13.72|863 -94.24 -14.72||838 -93.77 -13.65|863 -93.03 -13.86|
+|CQI(Avg)|4.46|4.94||4.6|4.40|
+|MCS(Avg)|8.16|8.72||7.46|5.87|
+|RI(Avg)|1.3|1.43||1.3|2.0|
+|Layer Number(Avg)|1.3|1.44||1.28|2.0|
+|PRB(Avg)|253|256||222|225|
+|PRB(Avg including 0)|169|173||142|148|
+|RB Utilization Ratio|62%|63%||58%|60%|
+|Slot Utilization Ratio|65%|67%||63%|65%|  
+
+**Throughput is proportional to MCS * LayerNumber * PRB**  
 R1E2: V1 vs V2: Different PCI  
 R1E3: Different PCI  
 R2E2: M vs V1: Different PCI  
+||M(PCell)|V1(PCell)||M(SCell1)|V1(SCell1)|
+|:--|:--|:--|:--|:--|:--|
+|Qci|6|7||6|7|
+|PCI|863|838||863|838|
+|ARFCN|520110|520110||502110|502110|
+|Throughput|101|113||80|114|
+|RSRP|-88.81|-93.41||-95.72|-95.19|
+|RSRQ|-12.29|-13.91||-15.42|-13.48|
+|SINR|0.88|-0.09||-1.45|0.70|
+|Neighbor PCI / RSRP / RSRQ|838 -92.64 -15.86|863 -93.74 -15.02||838 -95.70 -14.99|863 -95.42 -14.18|
+|CQI(Avg)|4.69|4.70||5.13|4.82|
+|MCS(Avg)|8.33|7.79||8.63|7.11|
+|RI(Avg)|1.5|1.56||1.17|1.9|
+|Layer Number(Avg)|1.5|1.56||1.17|1.9|
+|PRB(Avg)|243|251||225|224|
+|PRB(Avg including 0)|158|171||144|147|
+|RB Utilization Ratio|58%|63%||59%|60%|
+|Slot Utilization Ratio|63%|67%||63%|65%|
+
 R2E2: M vs V2: Different PCI  
 R3E2: M vs V1: Different PCI  
+||M(PCell)|V1(PCell)||M(SCell1)|V1(SCell1)|
+|:--|:--|:--|:--|:--|:--|
+|Qci|6|7||6|7|
+|PCI|863|838||863|838|
+|ARFCN|520110|520110||502110|502110|
+|Throughput|104|90||89|99|
+|RSRP|-88.23|-93.65||-94.38|-97.45|
+|RSRQ|-12.66|-13.16||-14.65|-15.11|
+|SINR|0.68|-0.52||-3.21|-0.61|
+|Neighbor PCI / RSRP / RSRQ|838 -91.22 -15.60|863 -95.30 -15.19||838 -97.44 -16.08|863 -92.34 -12.25|
+|CQI(Avg)|5.16|4.09||4.74|5.58|
+|MCS(Avg)|8.80|6.84||8.01|6.48|
+|RI(Avg)|1.34|1.68||1.36|1.95|
+|Layer Number(Avg)|1.34|1.69||1.36|1.96|
+|PRB(Avg)|255|238||225|218|
+|PRB(Avg including 0)|165|142||146|126|
+|RB Utilization Ratio|60%|52%||60%|51%|
+|Slot Utilization Ratio|64%|58%||64%|56%|
+
 R3E2: M vs V2: Different PCI  
 R3E3: Different PCI; Metro SCell failure  
 
@@ -239,7 +297,7 @@ L2E3: Metro dropped
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
 |Individually(5 samples)|3 (60%)|2 (40%)|0 (0%)|
-|M vs V1(5)|3 (60%)|2 (40%)|--|
+|M vs V1(5)|2 (40%)|3 (60%)|--|
 |M vs V2(5)|3 (60%)|--|2 (40%)|
 |V1 vs V2(5)|--|2 (40%)|3 (60%)|
 |Triple(5)|2 (40%)|2 (40%)|1 (20%)|
@@ -298,7 +356,7 @@ L5E3: TMobile dropped
 |Senario|M_T-Mobile|V1_Mint|V2_Metro|
 |:------|:--------:|:-----:|:------:|
 |Individually(24 samples)|10 (41.7%)|8 (33.3%)|6 (25%)|
-|M vs V1(24)|14 (60%)|10 (40%)|--|
+|M vs V1(24)|13 (54.2%)|11 (45.8%)|--|
 |M vs V2(24)|12 (50%)|--|12 (50%)|
 |V1 vs V2(24)|--|12 (50%)|12 (50%)|
 |Triple(24)|9 (37.5%)|7 (29.2%)|8 (33.3%)|
