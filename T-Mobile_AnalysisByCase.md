@@ -204,6 +204,8 @@ R1E2: M vs V1: Different PCI
 |Slot Utilization Ratio|65%|67%||63%|65%|  
 
 **Throughput is proportional to MCS * LayerNumber * PRB**  
+**Different Cell, different channel has independent resources pool and independent scheduler**  
+**Qci are only compared within same Cell(PCI) and same channel(ARFCN)**  
 R1E2: V1 vs V2: Different PCI  
 R1E3: Different PCI  
 R2E2: M vs V1: Different PCI  
